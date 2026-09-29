@@ -2,7 +2,7 @@ name: Build Docker images
 
 on:
   schedule:
-    - cron: "0 0 * * *" # At 00:00.
+    - cron: "0 0 * * 5" # At 00:00 on Friday
   push:
     branches:
       - "main"
@@ -25,11 +25,11 @@ permissions:
   packages: write
 
 jobs:
-  tf2-base-i386:
+  pretix:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     outputs:
-      tf2-base-i386-tag: ${{ steps.docker_meta.outputs.version }}
+      pretix-tag: ${{ steps.docker_meta.outputs.version }}
 
     steps:
       - name: Checkout
