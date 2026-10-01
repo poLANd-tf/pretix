@@ -55,8 +55,9 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           repository: poLANd-tf/pretix-custom-fonts
+          name: pretix_custom_fonts-1.0.0.tar.gz 
           skip-decompress: true
-          path: package
+          path: package/
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
