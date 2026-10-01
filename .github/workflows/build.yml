@@ -55,7 +55,9 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           repository: poLANd-tf/pretix-custom-fonts
-          name: pretix_custom_fonts-1.0.0.tar.gz 
+          name: pretix_custom_fonts-1.0.0.tar.gz
+          run-id: 36908482964
+          github-token: ${{ secrets.FONT_PACK_TOKEN }}
           skip-decompress: true
           path: package/
       - name: Build and push
